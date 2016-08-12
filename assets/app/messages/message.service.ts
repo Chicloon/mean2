@@ -1,7 +1,7 @@
 import { Message } from './message';
 
 export class MessageService {
-    messages: Message[];
+    messages: Message[] = [];
 
     addMessage(message: Message) {
         console.log(this.messages);
