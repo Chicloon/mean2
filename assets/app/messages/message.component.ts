@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from "@angular/core";
 
 import { Message } from "./message";
+import { MessageService } from './message.service';
 
 @Component({
     selector: 'my-message',
@@ -36,10 +37,16 @@ import { Message } from "./message";
     `]
 })
 export class MessageComponent {
-        @Input() message: Message;
-        @Output() editClicked = new EventEmitter<string>();
+    @Input() message: Message;
+    @Output() editClicked = new EventEmitter<string>();
 
-        onEdit() {
-                this.editClicked.emit('Changed');
-        }
+    constructor(private _message: MessageService) { }
+
+    onEdit() {
+        this._message.editMessage(this.message);
+    }
+
+    onDelete() {
+        this._message.deleteMessage(this.message);
+    }
 }

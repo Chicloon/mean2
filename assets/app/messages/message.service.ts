@@ -4,13 +4,16 @@ export class MessageService {
     messages: Message[] = [];
 
     addMessage(message: Message) {
-        console.log(this.messages);
         this.messages.push(message);
         console.log(this.messages);
     }
 
     getMessage(){
         return this.messages;
+    }
+
+    editMessage(message: Message) {
+        this.messages[this.messages.indexOf(message)] = new Message('Edited', null, 'Dummy');
     }
 
     deleteMessage(message: Message) {
