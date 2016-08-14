@@ -31,8 +31,6 @@ export class SigninComponent implements OnInit {
 
     ngOnInit(){
         this.myForm = this._fb.group({
-            firstName: ['', Validators.required],
-            lasttName: ['', Validators.required],
             email: ['', Validators.compose([
                 Validators.required,
                 this.isEmail

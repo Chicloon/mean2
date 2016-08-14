@@ -22,7 +22,16 @@ import { LogoutComponent } from './logout.component';
             <router-outlet></router-outlet>
         </div>
     `,
-    directives: [ROUTER_DIRECTIVES]
+    directives: [ROUTER_DIRECTIVES],
+    styles: [`
+        .router-link-active {
+            color: #555;
+            cursor: default;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-bottom-color: transparent;
+        }
+    `]
 })
 
 @Routes ([
