@@ -1,9 +1,8 @@
-import { bootstrap }    from '@angular/platform-browser-dynamic';
+///<reference path="../../typings.d.ts"/>
+import { bootstrap } from '@angular/platform-browser-dynamic';
+import { ROUTER_PROVIDERS } from "@angular/router";
 
-import { AppComponent } from './app.component';
-import { appRouterProviders } from './app.routes';
-import { MessageService } from './messages/message.service';
+import { AppComponent } from "./app.component";
+import { MessageService } from "./messages/message.service";
 
-bootstrap(AppComponent, [
-  appRouterProviders, MessageService
-]);
+bootstrap(AppComponent, [MessageService, ROUTER_PROVIDERS]);
